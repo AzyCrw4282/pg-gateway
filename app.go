@@ -14,6 +14,13 @@ import (
 var poolSize = env.GetInt("poolSize")
 
 func main() {
+	//os.Setenv("listenAddr", ":8080")
+	//os.Setenv("pghost", "127.0.0.1")
+	//os.Setenv("pguser", "postgres")
+	//os.Setenv("pgpassword", "")
+	//os.Setenv("pgdb", "postgres")
+	//os.Setenv("pgport", "59258")
+	//os.Setenv("poolSize", "5")
 
 	checkEnvironmentVars()
 	logrus.Println("Starting DB pool of size", poolSize)
