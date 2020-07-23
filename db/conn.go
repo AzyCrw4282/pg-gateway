@@ -9,11 +9,10 @@ import (
 )
 
 /*
-TODO: //sysetm issue - my pgsql does not accept any incodming connections despite trying everything.
+TODO: //system issue - my pgsql does not accept any incodming connections despite trying everything.
 This should not be the case in for other uses. It currently connects to the local
 system defined user;So in order to make connecting easier, Postgres.app creates a user with the
 same name as your system user when it starts the first time.
-
 
 See here->https://github.com/PostgresApp/PostgresApp/issues/313#issuecomment-191119317
 

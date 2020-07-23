@@ -20,9 +20,10 @@ func main() {
 	checkEnvironmentVars()
 
 	logrus.Println("Starting DB pool of size", poolSize)
-	db.NextPoolCon = db.StartConnCache(poolSize)
+	db.NextPoolCon = db.StartConnCache(poolSize) //starts connection cache
 
-	router := mux.NewRouter()
+	router := mux.NewRouter() // creates a nwe router instance
+	//and defines the path, almost like regex for the input string. It also sets the relevant method to it.
 	router.HandleFunc("/", web.HandleOptions).Methods(http.MethodOptions)
 	router.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) { w.WriteHeader(http.StatusOK) })
 	router.HandleFunc("/{entity}", web.HandleGetMany).Methods(http.MethodGet)

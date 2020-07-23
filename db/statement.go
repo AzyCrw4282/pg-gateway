@@ -9,6 +9,9 @@ import (
 
 type Insertable map[string]json.RawMessage
 
+/*
+All statements checks are evaluated here before going to the API class
+*/
 func Insert(entity string, insertable Insertable) (err error) {
 	conn := NextPoolCon()
 	defer conn.Close()

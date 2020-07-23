@@ -4,10 +4,11 @@ import (
 	"github.com/jackc/pgx"
 )
 
-var NextPoolCon func() *pgx.Conn
+var NextPoolCon func() *pgx.Conn //pointer to a pgx conneciton struct
 
 type connCache chan *pgx.Conn
 
+//
 func (c connCache) populate() {
 	for {
 		c <- connectOrDie()
